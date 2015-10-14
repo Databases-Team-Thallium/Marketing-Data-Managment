@@ -1,10 +1,9 @@
 ﻿namespace MarketingDataManagment.DataReaders
 {
-    using System;
-    using System.IO;
+    using DataTypes;
 
     public interface IDataReader
     {
-        void ReadData(Stream stream, long streamLength, DateTime streamDate);
+        TableData ReadData();
     }
 }

@@ -4,6 +4,7 @@
     using System.IO.Compression;
     using System.Collections.Generic;
 
+    using DataTypes;
     using DataReaders;
     using StringsUtilities;
 
@@ -20,52 +21,57 @@
             this.extensionsToRead = extensionsToRead;
         }
 
-        public void Parse()
+        public ICollection<TableData> Parse()
         {
-            this.Parse(false);
+            return this.Parse(false);
         }
 
-        public void Parse(bool extractDateFromFolderName)
+        public ICollection<TableData> Parse(bool extractDateFromFolderName)
         {
+            var tablesData = new List<TableData>();
+
             foreach (ZipArchiveEntry entry in archive.Entries)
             {
                 if (IsExtensionToRead(entry.FullName) == true)
                 {
-                    using (var entryStream = entry.Open())
+                    var entryStream = entry.Open();
+                    
+                    DateTime entryDate;
+
+                    if (extractDateFromFolderName == true)
                     {
-                        DateTime entryDate;
-
-                        if (extractDateFromFolderName == true)
-                        {
-                            entryDate = PathNameParser.ExtractDateFromFolderName(entry.FullName);
-                        }
-                        else
-                        {
-                            entryDate = DateTime.Now;
-                        }
-
-                        dataReader.ReadData(entryStream, entry.Length, entryDate);
+                        entryDate = PathNameParser.ExtractDateFromFolderName(entry.FullName);
                     }
+                    else
+                    {
+                        entryDate = DateTime.Now;
+                    }
+
+                    tablesData.Add(dataReader.ReadData());
+
+                    entryStream.Dispose();
                 }
             }
-        }
 
-        public void Dispose()
-        {
-            this.archive.Dispose();
+            return tablesData;
         }
 
         private bool IsExtensionToRead(string fileName)
         {
-            foreach(var extension in extensionsToRead)
+            foreach (var extension in extensionsToRead)
             {
-                if(fileName.EndsWith(extension, StringComparison.OrdinalIgnoreCase) == true)
+                if (fileName.EndsWith(extension, StringComparison.OrdinalIgnoreCase) == true)
                 {
                     return true;
                 }
             }
 
             return false;
+        }
+
+        public void Dispose()
+        {
+            this.archive.Dispose();
         }
     }
 }

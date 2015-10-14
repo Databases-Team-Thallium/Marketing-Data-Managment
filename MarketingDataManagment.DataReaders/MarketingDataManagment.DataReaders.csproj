@@ -48,7 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ExcelDataReader.cs" />
+    <Compile Include="ExcelDataReaderFromStream.cs" />
     <Compile Include="IDataReader.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -56,9 +56,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MarketingDataManagment.Databases\MarketingDataManagment.Databases.csproj">
-      <Project>{59ded67b-68ac-468b-bf1c-b7be19e0ab84}</Project>
-      <Name>MarketingDataManagment.Databases</Name>
+    <ProjectReference Include="..\MarketingDataManagment.DataTypes\MarketingDataManagment.DataTypes.csproj">
+      <Project>{a74228f1-8a6f-4a25-bba1-4592ef3d6184}</Project>
+      <Name>MarketingDataManagment.DataTypes</Name>
     </ProjectReference>
     <ProjectReference Include="..\MarketingDataManagment.StringsUtilities\MarketingDataManagment.StringsUtilities.csproj">
       <Project>{7b1c1439-8e07-48d9-a551-5c87f321ed84}</Project>
