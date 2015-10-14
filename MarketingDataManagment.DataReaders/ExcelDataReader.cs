@@ -30,8 +30,7 @@
             DataSet result = excelReader.AsDataSet();
 
             int rowIndex = 0;
-            var dataSet = new Dictionary<string, ICollection<string>>();
-            var formatedColumnsNames = new List<string>();
+            var tableData = new TableData();
 
             while (excelReader.Read())
             {
@@ -41,17 +40,18 @@
                 {
                     for (int i = 0; i < result.Tables[0].Columns.Count; i++)
                     {
-                        string columnName = TextFormatter.FormatColumnName(result.Tables[0].Columns[i].ColumnName);
-                        dataSet.Add(columnName, new List<string>());
-                        formatedColumnsNames.Add(columnName);
+                        string columnName = result.Tables[0].Columns[i].ColumnName;
+                        string formattedColumnName = TextFormatter.FormatColumnName(columnName);
+                        tableData.AddColumnName(formattedColumnName);
                     }
                 }
                 else
                 {
-                    for (int i = 0; i < formatedColumnsNames.Count; i++)
+                    for (int i = 0; i < tableData.ColumnsCount; i++)
                     {
-                        string columnName = formatedColumnsNames[i];
-                        dataSet[columnName].Add(result.Tables[0].Rows[rowIndex].ItemArray[i].ToString());
+                        string formattedColumnName = tableData.GetColumnName(i);
+                        object data = result.Tables[0].Rows[rowIndex].ItemArray[i].ToString();
+                        tableData.AddData(i, data);
                     }
                 }
 
