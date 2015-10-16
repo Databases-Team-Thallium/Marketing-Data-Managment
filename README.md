@@ -2,17 +2,17 @@
 
  Problems: 
  
- 1. Load Excel Reports from ZIP File - (non-commercial library to read the ZIP file??)
+ 1. Load Excel Reports from ZIP File - (non-commercial library to read the ZIP file??) - Angel
     * Preliminary desgned database schema
     * Inputs:  MongoDB database (accessed through the Official MongoDB C# Driver?); ZIP file with Excel 2003 reports - (ADO.NET?). 
     * Output: data loaded in the SQL Server database.
- 2. Generate PDF Reports - (non-commercial third party framework?)
+ 2. Generate PDF Reports - (non-commercial third party framework?) - Angel
     * Input: SQL Server database
     * Output: PDF report
  3. Generate XML Report - standard .NET parsers?
     * Input: SQL Server database
     * Output: XML report
- 4. SQL Server Database - accessed through Entity Framework
+ 4. SQL Server Database - accessed through Entity Framework - Magi
     * Tables
     * Sample Data
     * Code-first approac - main program logic is a C# application
@@ -28,5 +28,5 @@
  7. Excel data
     * Input: SQLite database - (accesses though its Entity Framework provider?), MySQL database
     * Output: Excel 2007 file (.xlsx)
- 8. Excel Tables
+ 8. Excel Tables - Magi
     * creating the Excel 2007 files (.xlsx) use a third-party non-commercial library 
