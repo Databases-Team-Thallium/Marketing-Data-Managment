@@ -9,14 +9,14 @@
  2. Generate PDF Reports - (non-commercial third party framework?) - Angel
     * Input: SQL Server database
     * Output: PDF report
- 3. Generate XML Report - standard .NET parsers?
+ 3. Generate XML Report - standard .NET parsers?   Doushka
     * Input: SQL Server database
     * Output: XML report
  4. SQL Server Database - accessed through Entity Framework - Magi
     * Tables
     * Sample Data
     * Code-first approac - main program logic is a C# application
- 5. JSON Reports - serializations via a non-commercial library / framework?
+ 5. JSON Reports - serializations via a non-commercial library / framework?  Doushka ?
     * report for each product in JSON format
     * save all reports in MySQL (accessed through OpenAccess ORM?)
     * Input: SQL Server database
