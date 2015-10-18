@@ -1,4 +1,4 @@
-﻿namespace ProductsSystem.Models
+﻿namespace MarketingDataManagment.Databases.MSSQL.Models
 {
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;

@@ -1,4 +1,4 @@
-﻿namespace ProductsSystem.Models
+﻿namespace MarketingDataManagment.Databases.MSSQL.Models
 {
     /// <summary>
     /// Creates the statuses for the different products

@@ -1,24 +1,25 @@
-﻿namespace ProductsSystem.Client
+﻿namespace MarketingDataManagment.ConsoleClient
 {
     using System.Data.Entity;
-    using Data;
-    using Data.Migrations;
-    using Models;
+
+    using Databases.MSSQL.Data;
+    using Databases.MSSQL.Data.Migrations;
+    using Databases.MSSQL.Models;
 
     public class Startup
     {
         public static void Main()
         {
             Database.SetInitializer(
-                new MigrateDatabaseToLatestVersion<ProductsSystemDbContext, Configuration>());
+                new MigrateDatabaseToLatestVersion<MarketingDataManagmentDbContenxt, Configuration>());
 
-            var db = new ProductsSystemDbContext();
+            var db = new MarketingDataManagmentDbContenxt();
 
             db.Stores.Add(new Store
             {
                 StoreName = "Physical Store",
                 StoreLocation = "Sofia"
-                
+
             });
             db.SaveChanges();
 

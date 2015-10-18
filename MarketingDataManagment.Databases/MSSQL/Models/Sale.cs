@@ -1,7 +1,7 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace ProductsSystem.Models
+﻿namespace MarketingDataManagment.Databases.MSSQL.Models
 {
+    using System.ComponentModel.DataAnnotations;
+
     /// <summary>
     /// Creates the Sales Table
     /// </summary>

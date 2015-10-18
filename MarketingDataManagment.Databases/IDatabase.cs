@@ -1,10 +1,10 @@
 ﻿namespace MarketingDataManagment.Databases
 {
-    using System.Collections.Generic;
+    using DataTypes;
 
     public interface IDatabase
     {
         void SelectTable(string tableName);
-        void InsertRow(IDictionary<string, ICollection<string>> rowData);
+        void Insert(TableData tableData);
     }
 }
