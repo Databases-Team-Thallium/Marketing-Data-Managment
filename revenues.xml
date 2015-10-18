@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<revenues-by-date>
+  <store name="VIVA WEB">
+      <revenues day="01-01-2015">130.00</revenues>
+      <revenues day="02-01-2015">178.00</revenues>
+      <revenues day="03-01-2015">183.00</revenues>
+      <revenues day="04-01-2015">295.00</revenues>
+      <revenues day="05-01-2015">1340.00</revenues>
+      <revenues day="06-01-2015">1950.00</revenues>
+      <revenues day="07-01-2015">1573.00</revenues>
+      <revenues day="08-01-2015">1952.00</revenues>
+      <revenues day="09-01-2015">178.00</revenues>
+      <revenues day="10-01-2015">106.00</revenues>
+  </store >
+  <store name="VIVA MallSofia">
+      <revenues day="01-01-2015">167.00</revenues>
+      <revenues day="02-01-2015">456.00</revenues>
+      <revenues day="03-01-2015">805.00</revenues>
+      <revenues day="04-01-2015">832.00</revenues>
+      <revenues day="05-01-2015">1430.00</revenues>
+      <revenues day="06-01-2015">1056.00</revenues>
+      <revenues day="07-01-2015">754.00</revenues>
+      <revenues day="08-01-2015">942.00</revenues>
+      <revenues day="09-01-2015">495.00</revenues>
+      <revenues day="10-01-2015">842.00</revenues>
+  </store >
+  <store name="VIVA MallSerdika">
+      <revenues day="01-01-2015">145.00</revenues>
+      <revenues day="02-01-2015">856.00</revenues>
+      <revenues day="03-01-2015">205.00</revenues>
+      <revenues day="04-01-2015">956.00</revenues>
+      <revenues day="05-01-2015">2040.00</revenues>
+      <revenues day="06-01-2015">2696.00</revenues>
+      <revenues day="07-01-2015">1967.00</revenues>
+      <revenues day="08-01-2015">1745.00</revenues>
+      <revenues day="09-01-2015">1495.00</revenues>
+      <revenues day="10-01-2015">2842.00</revenues>
+  </store >
+  <store name="VIVA Facebook">
+      <revenues day="01-01-2015">125.00</revenues>
+      <revenues day="02-01-2015">236.00</revenues>
+      <revenues day="03-01-2015">285.00</revenues>
+      <revenues day="04-01-2015">376.00</revenues>
+      <revenues day="05-01-2015">140.00</revenues>
+      <revenues day="06-01-2015">196.00</revenues>
+      <revenues day="07-01-2015">237.00</revenues>
+      <revenues day="08-01-2015">305.00</revenues>
+      <revenues day="09-01-2015">195.00</revenues>
+      <revenues day="10-01-2015">242.00</revenues>
+  </store >
+</revenues-by-date >

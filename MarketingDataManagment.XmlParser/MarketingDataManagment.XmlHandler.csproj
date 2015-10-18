@@ -1,16 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{59DED67B-68AC-468B-BF1C-B7BE19E0AB84}</ProjectGuid>
+    <ProjectGuid>{48397869-58CD-4975-8206-759FFD0A04C1}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MarketingDataManagment.Databases</RootNamespace>
-    <AssemblyName>MarketingDataManagment.Databases</AssemblyName>
+    <RootNamespace>MarketingDataManagment.XmlHandler</RootNamespace>
+    <AssemblyName>MarketingDataManagment.XmlParser</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -30,13 +31,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+    <Reference Include="EntityFramework">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
-      <Private>True</Private>
     </Reference>
-    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+    <Reference Include="EntityFramework.SqlServer">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
-      <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -45,29 +44,27 @@
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IDatabase.cs" />
-    <Compile Include="MSSQL\Data\MarketingDataManagmentDbContenxt.cs" />
-    <Compile Include="MSSQL\Data\Migrations\Configuration.cs" />
-    <Compile Include="MSSQL\Models\Product.cs" />
-    <Compile Include="MSSQL\Models\ProductStatus.cs" />
-    <Compile Include="MSSQL\Models\Revenue.cs" />
-    <Compile Include="MSSQL\Models\Sale.cs" />
-    <Compile Include="MSSQL\Models\Store.cs" />
+    <Compile Include="XmlDataStrategies\IXmlDataStrategy.cs" />
+    <Compile Include="XmlDataStrategies\XmlRevenueStrategy.cs" />
+    <Compile Include="XmlHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
+    <ProjectReference Include="..\MarketingDataManagment.Databases\MarketingDataManagment.Databases.csproj">
+      <Project>{59ded67b-68ac-468b-bf1c-b7be19e0ab84}</Project>
+      <Name>MarketingDataManagment.Databases</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MarketingDataManagment.DataTypes\MarketingDataManagment.DataTypes.csproj">
       <Project>{a74228f1-8a6f-4a25-bba1-4592ef3d6184}</Project>
       <Name>MarketingDataManagment.DataTypes</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

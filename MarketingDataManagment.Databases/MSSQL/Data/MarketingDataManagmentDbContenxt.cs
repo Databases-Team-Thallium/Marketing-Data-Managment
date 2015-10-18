@@ -19,5 +19,7 @@
         public IDbSet<Store> Stores { get; set; }
 
         public IDbSet<Sale> Sales { get; set; }
+
+        public IDbSet<Revenue> Revenues { get; set; }
     }
 }

@@ -5,6 +5,7 @@
     using Databases.MSSQL.Data;
     using Databases.MSSQL.Data.Migrations;
     using Databases.MSSQL.Models;
+    using XmlHandler;
 
     public class Startup
     {
@@ -23,6 +24,11 @@
             });
             db.SaveChanges();
 
+            //puts revenues in Revenues table in the database
+            //since no such store exists in the database, a default value of 0 is set
+
+            //var xmlParser = new XmlHandler(new XmlRevenueStrategy(), "../../../revenues.xml");
+            //xmlParser.Handle();
         }
     }
 }

@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarketingDataManagment.ZipParser", "MarketingDataManagment.ZipParser\MarketingDataManagment.ZipParser.csproj", "{345783D2-D769-45FE-A410-4D43D59801E5}"
 EndProject
@@ -16,6 +16,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarketingDataManagment.DataTypes", "MarketingDataManagment.DataTypes\MarketingDataManagment.DataTypes.csproj", "{A74228F1-8A6F-4A25-BBA1-4592EF3D6184}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarketingDataManagment.ConsoleClient", "MarketingDataManagment.ConsoleClient\MarketingDataManagment.ConsoleClient.csproj", "{58A900A7-758F-4222-809D-7D1B4907C87D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarketingDataManagment.XmlHandler", "MarketingDataManagment.XmlParser\MarketingDataManagment.XmlHandler.csproj", "{48397869-58CD-4975-8206-759FFD0A04C1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{58A900A7-758F-4222-809D-7D1B4907C87D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{58A900A7-758F-4222-809D-7D1B4907C87D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{58A900A7-758F-4222-809D-7D1B4907C87D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48397869-58CD-4975-8206-759FFD0A04C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48397869-58CD-4975-8206-759FFD0A04C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48397869-58CD-4975-8206-759FFD0A04C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48397869-58CD-4975-8206-759FFD0A04C1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
