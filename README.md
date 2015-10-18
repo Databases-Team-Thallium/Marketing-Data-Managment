@@ -21,7 +21,7 @@
     * save all reports in MySQL (accessed through OpenAccess ORM?)
     * Input: SQL Server database
     * Output: a set of JSON files, data loaded in MySQL database
- 6. Load data from XML - standard .NET parsers?
+ 6. Load data from XML - standard .NET parsers? - Rado
     * additional information by your choice (here we can include some future predictions or reports)
     * Input: XML file
     * Output: data loaded in the SQL Server, data loaded in the MongoDB
