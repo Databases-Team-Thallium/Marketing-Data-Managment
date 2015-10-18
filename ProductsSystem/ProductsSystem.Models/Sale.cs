@@ -1,4 +1,6 @@
-﻿namespace ProductsSystem.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace ProductsSystem.Models
 {
     /// <summary>
     /// Creates the Sales Table
@@ -9,6 +11,13 @@
         /// Gets or sets the is for the sales table
         /// </summary>
         public int SaleId { get; set; }
+
+        /// <summary>
+        /// Gets or sets the name for the sales table
+        /// </summary>
+        [Required]
+        [MaxLength(50)]
+        public string SaleName { get; set; }
 
         /// <summary>
         /// Gets or sets the quantity of the sold items

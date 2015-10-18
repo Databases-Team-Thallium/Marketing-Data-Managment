@@ -1,6 +1,7 @@
 ﻿namespace ProductsSystem.Models
 {
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
 
     /// <summary>
     /// Creating the Product Table 
@@ -24,12 +25,14 @@
         /// <summary>
         /// Gets or sets how the product is stored in Excel file system
         /// </summary>
+        [Required]
+        [MaxLength(50)]
         public string ProductCode { get; set; }
 
         /// <summary>
         /// Gets or sets sale Price
         /// </summary>
-        public double Price { get; set; }
+        public decimal Price { get; set; }
 
         /// <summary>
         /// Gets or sets the initial ordered quantity, from which the sold items will be subtracted
@@ -46,7 +49,7 @@
             get { return this.sales; }
             set { this.sales = value; }
         }
-
+        
         public virtual ICollection<Store> Stores
         {
             get { return this.stores; }

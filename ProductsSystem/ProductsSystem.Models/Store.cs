@@ -1,6 +1,7 @@
 ﻿namespace ProductsSystem.Models
 {
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
 
     /// <summary>
     /// Creates the Store table
@@ -24,11 +25,15 @@
         /// <summary>
         /// Gets or sets the name of the store
         /// </summary>
+        [Required]
+        [MaxLength(50)]
         public string StoreName { get; set; }
 
         /// <summary>
         /// Gets or sets the location of the store
         /// </summary>
+        [Required]
+        [MaxLength(150)]
         public string StoreLocation { get; set; }
 
         public virtual ICollection<Sale> Sales
