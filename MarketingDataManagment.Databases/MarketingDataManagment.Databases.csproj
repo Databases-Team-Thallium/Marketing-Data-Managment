@@ -57,6 +57,7 @@
     <Compile Include="MSSQL\Models\Revenue.cs" />
     <Compile Include="MSSQL\Models\Sale.cs" />
     <Compile Include="MSSQL\Models\Store.cs" />
+    <Compile Include="MSSQL\Reports\SalesReport.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
