@@ -38,8 +38,10 @@
         private static void ShowMenu()
         {
             Console.WriteLine("1 - Seed MongoDB products catalog with data.");
-            Console.WriteLine("2 - Import MongoDB products into MSSQL Store database");
-            Console.WriteLine("3 - Import zipped sales info excels into MSSQL Store database");
+            Console.WriteLine("2 - Import MongoDB products into MSSQL Store database.");
+            Console.WriteLine("3 - Import zipped sales info excels into MSSQL Store database.");
+            Console.WriteLine("4 - Generate pdf report with top sold products.");
+            Console.WriteLine("5 - Generate json sales reports.");
         }
 
         private static string ExecuteTask(int taskIndex)
@@ -49,6 +51,8 @@
                 case 1: return SeedMongoDBProductsCatalog.Execute();
                 case 2: return ImportMongoDBProductsToMSSQLStoreDatabase.Execute();
                 case 3: return ImportZippedSalesExcelsIntoMSSQLStoreDatabase.Execute();
+                case 4: return GeneratePdfReportWithTopSoldProducts.Execute();
+                case 5: return GenerateJsonSalesReports.Execute();
                 default: return "Wrong task index.";
             }
         }

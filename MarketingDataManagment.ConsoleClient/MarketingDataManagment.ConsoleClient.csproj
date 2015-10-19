@@ -54,6 +54,8 @@
   <ItemGroup>
     <Compile Include="Startup.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tasks\GenerateJsonSalesReports.cs" />
+    <Compile Include="Tasks\GeneratePdfReportWithTopSoldProducts.cs" />
     <Compile Include="Tasks\ImportMongoDBProductsToMSSQLStoreDatabase.cs" />
     <Compile Include="Tasks\ImportZippedSalesExcelsIntoMSSQLStoreDatabase.cs" />
     <Compile Include="Tasks\SeedMongoDBProductsCatalog.cs" />

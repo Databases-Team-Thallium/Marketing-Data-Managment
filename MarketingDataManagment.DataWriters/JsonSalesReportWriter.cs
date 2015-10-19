@@ -28,28 +28,29 @@
                 Directory.CreateDirectory(directoryPath);
             }
 
-            var sales = this.salesRepository.All();
+            var sales = this.salesRepository.All().Select(s => new {
+                SaleId = s.SaleId.ToString(),
+                QuantitySold = s.QuantitySold.ToString(),
+                TotalIncome = (s.Product.Price * s.QuantitySold).ToString()
+            });
 
             foreach (var sale in sales)
             {
                 FileStream fileStream = new FileStream(directoryPath + @"\" + sale.SaleId + ".json", FileMode.OpenOrCreate, FileAccess.Write);
                 StreamWriter writer = new StreamWriter(fileStream);
 
-                writer.WriteLine(CreateJsonReport(sale));
+                var serializedData = new JavaScriptSerializer().Serialize(
+                    new Dictionary<string, string>()
+                    {
+                            { "sale-id", sale.SaleId },
+                            { "total-quantity-sold", sale.QuantitySold },
+                            { "total-incomes", sale.TotalIncome }
+                    });
+
+                writer.WriteLine(serializedData);
                 writer.Close();
             }
         }
 
-        public string CreateJsonReport(Sale sale)
-        {
-            decimal totalIncome = sale.Product.Price * sale.QuantitySold;
-            return new JavaScriptSerializer().Serialize(
-                    new Dictionary<string, string>()
-                        {
-                            { "sale-id", sale.SaleId.ToString() },
-                            { "total-quantity-sold", sale.QuantitySold.ToString() },
-                            { "total-incomes", totalIncome.ToString() }
-                        });
-        }
     }
 }

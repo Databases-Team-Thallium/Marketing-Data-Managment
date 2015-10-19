@@ -14,7 +14,7 @@
 
     public class PdfTopSoldProductsTableWriter: IReportFilesDataWriter
     {
-        private readonly IList<string> ColumnsNames = new List<string>() { "Product Code" , "Produce Price", "Quantity Sold" };
+        private readonly IList<string> ColumnsNames = new List<string>() { "Product Code" , "Product Price", "Quantity Sold" };
         private IGenericRepository<Sale> salesRepository;
 
         public PdfTopSoldProductsTableWriter(IGenericRepository<Sale> salesRepository)
@@ -26,12 +26,14 @@
         {
             var document = new Document();
 
-            var documentFileStream = new FileStream(directoryPath +  "\\top-ten-" + DateTime.Now + ".pdf", FileMode.Create);
+            var documentFileStream = new FileStream(directoryPath +  "\\top ten sold products " + DateTime.Now.Year + "-" + DateTime.Now.Month + "-" + DateTime.Now.Day + ".pdf", FileMode.Create);
             var writer = PdfWriter.GetInstance(document, documentFileStream);
 
-            document.Open();
-
-            var topTenSoldProducts = this.salesRepository.All().Take(10).Select(s => new
+            
+            var topTenSoldProducts = this.salesRepository.All()
+                .OrderByDescending(s => s.QuantitySold)
+                .Take(10)
+                .Select(s => new
             {
                 Code = s.Product.ProductCode,
                 Price = s.Product.Price,
@@ -52,8 +54,9 @@
                 table.AddCell(product.QuantitySold.ToString());
             }
 
+            document.Open();
+            document.Add(table);
             document.Close();
-            writer.Close();
         }
     }
 }
