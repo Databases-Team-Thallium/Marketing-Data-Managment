@@ -49,12 +49,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MSSQL\Data\ExportData.cs" />
     <Compile Include="IDatabase.cs" />
     <Compile Include="MSSQL\Data\MarketingDataManagmentDbContenxt.cs" />
     <Compile Include="MSSQL\Data\Migrations\Configuration.cs" />
     <Compile Include="MSSQL\Models\Product.cs" />
     <Compile Include="MSSQL\Models\ProductStatus.cs" />
+    <Compile Include="MSSQL\Models\Reports\StoreSalesReport.cs" />
+    <Compile Include="MSSQL\Models\Reports\StoresSalesReports.cs" />
     <Compile Include="MSSQL\Models\Revenue.cs" />
     <Compile Include="MSSQL\Models\Sale.cs" />
     <Compile Include="MSSQL\Models\Store.cs" />
