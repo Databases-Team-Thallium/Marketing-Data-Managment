@@ -4,6 +4,6 @@
 
     public interface IProductsCatalogData
     {
-        IGenericRepository<Product> Products { get; }
+        IGenericRepository<CatalogProduct> Products { get; }
     }
 }

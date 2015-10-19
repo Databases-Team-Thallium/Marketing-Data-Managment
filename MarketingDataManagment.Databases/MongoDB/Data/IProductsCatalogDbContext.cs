@@ -6,7 +6,7 @@
 
     public interface IProductsCatalogDbContext
     {
-        IMongoCollection<Product> Products { get; set; }
+        IMongoCollection<CatalogProduct> Products { get; set; }
 
         IMongoCollection<T> Set<T>(string name) where T : class;
     }

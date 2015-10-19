@@ -14,7 +14,7 @@
             Database.SetInitializer(new MigrateDatabaseToLatestVersion<StoresDbContext, Configuration>());
         }
 
-        public IDbSet<Product> Products { get; set; }
+        public IDbSet<StoreProduct> Products { get; set; }
 
         public IDbSet<Sale> Sales { get; set; }
 

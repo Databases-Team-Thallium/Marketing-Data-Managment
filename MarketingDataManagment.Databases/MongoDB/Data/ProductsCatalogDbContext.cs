@@ -20,7 +20,7 @@
             this.db = mongoClient.GetDatabase(dbName);
         }
 
-        public IMongoCollection<Product> Products { get; set; }
+        public IMongoCollection<CatalogProduct> Products { get; set; }
 
         public IMongoCollection<T> Set<T>(string name) where T : class
         {

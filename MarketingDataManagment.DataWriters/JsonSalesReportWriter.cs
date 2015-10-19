@@ -13,9 +13,9 @@
     public class JsonSalesReportWriter : IReportFilesDataWriter
     {
         private IGenericRepository<Sale> salesRepository;
-        private IGenericRepository<Product> productsRepository;
+        private IGenericRepository<StoreProduct> productsRepository;
 
-        public JsonSalesReportWriter(IGenericRepository<Sale> salesRepository, IGenericRepository<Product> productsRepository)
+        public JsonSalesReportWriter(IGenericRepository<Sale> salesRepository, IGenericRepository<StoreProduct> productsRepository)
         {
             this.salesRepository = salesRepository;
             this.productsRepository = productsRepository;

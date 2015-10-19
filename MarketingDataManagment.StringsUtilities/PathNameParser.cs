@@ -7,7 +7,7 @@
     {
         public static DateTime ExtractDateFromFolderName(string fullPathName)
         {
-            return Convert.ToDateTime(new DirectoryInfo(fullPathName).Name);
+            return Convert.ToDateTime(Path.GetFileName(Path.GetDirectoryName(fullPathName)));
         }
     }
 }

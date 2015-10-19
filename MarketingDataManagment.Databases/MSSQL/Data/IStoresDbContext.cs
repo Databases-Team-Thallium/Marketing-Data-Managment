@@ -7,7 +7,7 @@
 
     public interface IStoresDbContext
     {
-        IDbSet<Product> Products { get; set; }
+        IDbSet<StoreProduct> Products { get; set; }
 
         IDbSet<Sale> Sales { get; set; }
 

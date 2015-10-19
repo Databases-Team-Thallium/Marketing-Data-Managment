@@ -17,11 +17,11 @@
             this.repositories = new Dictionary<Type, object>();
         }
 
-        public IGenericRepository<Product> Products
+        public IGenericRepository<CatalogProduct> Products
         {
             get
             {
-                return this.GetRepository<Product>("test_products");
+                return this.GetRepository<CatalogProduct>("test_products");
             }
         }
 

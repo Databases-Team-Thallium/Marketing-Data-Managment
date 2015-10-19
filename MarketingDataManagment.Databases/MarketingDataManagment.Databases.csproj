@@ -76,14 +76,13 @@
     <Compile Include="MongoDB\Data\ProductsCatalogData.cs" />
     <Compile Include="MongoDB\Data\ProductsCatalogDbContext.cs" />
     <Compile Include="MongoDB\Data\Repositories\GenericRepository.cs" />
-    <Compile Include="MongoDB\Models\Product.cs" />
+    <Compile Include="MongoDB\Models\CatalogProduct.cs" />
     <Compile Include="MSSQL\Data\IStoresData.cs" />
     <Compile Include="MSSQL\Data\IStoresDbContext.cs" />
     <Compile Include="MSSQL\Data\StoresDbContext.cs" />
     <Compile Include="MSSQL\Data\Migrations\Configuration.cs" />
     <Compile Include="MSSQL\Data\Repositories\GenericRepository.cs" />
-    <Compile Include="MSSQL\Models\Product.cs" />
-    <Compile Include="MSSQL\Models\ProductStatus.cs" />
+    <Compile Include="MSSQL\Models\StoreProduct.cs" />
     <Compile Include="MSSQL\Models\Revenue.cs" />
     <Compile Include="MSSQL\Models\Sale.cs" />
     <Compile Include="MSSQL\Data\StoresData.cs" />

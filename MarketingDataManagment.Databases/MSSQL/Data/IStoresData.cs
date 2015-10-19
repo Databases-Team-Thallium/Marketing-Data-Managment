@@ -5,7 +5,7 @@
 
     public interface IStoresData
     {
-        IGenericRepository<Product> Products { get; }
+        IGenericRepository<StoreProduct> Products { get; }
 
         IGenericRepository<Sale> Sales { get; }
 

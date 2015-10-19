@@ -48,8 +48,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ExcelCatalogProductsReader.cs" />
     <Compile Include="IFileDataReader.cs" />
-    <Compile Include="SalesTablesReader.cs" />
+    <Compile Include="ExcelSalesReader.cs" />
     <Compile Include="IStreamDataReader.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="XmlRevenuesDataReader.cs" />

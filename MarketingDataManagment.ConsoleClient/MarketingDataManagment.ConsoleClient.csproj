@@ -54,6 +54,9 @@
   <ItemGroup>
     <Compile Include="Startup.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tasks\ImportMongoDBProductsToMSSQLStoreDatabase.cs" />
+    <Compile Include="Tasks\ImportZippedSalesExcelsIntoMSSQLStoreDatabase.cs" />
+    <Compile Include="Tasks\SeedMongoDBProductsCatalog.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -63,6 +66,18 @@
     <ProjectReference Include="..\MarketingDataManagment.Databases\MarketingDataManagment.Databases.csproj">
       <Project>{59ded67b-68ac-468b-bf1c-b7be19e0ab84}</Project>
       <Name>MarketingDataManagment.Databases</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MarketingDataManagment.DataReaders\MarketingDataManagment.DataReaders.csproj">
+      <Project>{f494661f-7919-45cc-b27e-af5f5a05db0f}</Project>
+      <Name>MarketingDataManagment.DataReaders</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MarketingDataManagment.DataWriters\MarketingDataManagment.DataWriters.csproj">
+      <Project>{a22090c5-5052-4e94-8f39-7f59a8f432b0}</Project>
+      <Name>MarketingDataManagment.DataWriters</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MarketingDataManagment.ZipParser\MarketingDataManagment.ZipParser.csproj">
+      <Project>{345783d2-d769-45fe-a410-4d43d59801e5}</Project>
+      <Name>MarketingDataManagment.ZipParser</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
