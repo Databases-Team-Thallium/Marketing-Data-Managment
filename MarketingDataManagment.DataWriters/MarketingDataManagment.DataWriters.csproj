@@ -45,11 +45,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IDataWriter.cs" />
-    <Compile Include="JsonWriter.cs" />
-    <Compile Include="PdfWriters\PdfTableWriter.cs" />
+    <Compile Include="IReportFilesDataWriter.cs" />
+    <Compile Include="JsonSalesReportWriter.cs" />
+    <Compile Include="PdfTopSoldProductsTableWriter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="XmlWriter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -59,13 +58,6 @@
       <Project>{59ded67b-68ac-468b-bf1c-b7be19e0ab84}</Project>
       <Name>MarketingDataManagment.Databases</Name>
     </ProjectReference>
-    <ProjectReference Include="..\MarketingDataManagment.DataTypes\MarketingDataManagment.DataTypes.csproj">
-      <Project>{a74228f1-8a6f-4a25-bba1-4592ef3d6184}</Project>
-      <Name>MarketingDataManagment.DataTypes</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

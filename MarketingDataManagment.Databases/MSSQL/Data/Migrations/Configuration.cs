@@ -4,16 +4,16 @@
     using Models;
     using System.Collections.Generic;
 
-    public sealed class Configuration : DbMigrationsConfiguration<MarketingDataManagmentDbContenxt>
+    public sealed class Configuration : DbMigrationsConfiguration<StoresDbContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
             AutomaticMigrationDataLossAllowed = true;
-            this.ContextKey = "MarketingDataManagmentDbContenxt.MSSQL.Data.MarketingDataManagmentDbContenxt";
+            this.ContextKey = "MarketingDataManagmentDbContenxt.MSSQL.Data.StoresData";
         }
 
-        protected override void Seed(MarketingDataManagmentDbContenxt context)
+        protected override void Seed(StoresDbContext context)
         {
         }
     }

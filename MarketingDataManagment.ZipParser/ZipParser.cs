@@ -4,32 +4,29 @@
     using System.IO.Compression;
     using System.Collections.Generic;
 
-    using DataTypes;
     using DataReaders;
     using StringsUtilities;
 
     public class ZipParser: IDisposable
     {
         private readonly ZipArchive archive;
-        private readonly IDataReader dataReader;
+        private readonly IStreamDataReader dataReader;
         private readonly ICollection<string> extensionsToRead;
 
-        public ZipParser(string zipFilePath, ICollection<string> extensionsToRead, IDataReader dataReader)
+        public ZipParser(string zipFilePath, ICollection<string> extensionsToRead, IStreamDataReader dataReader)
         {
             this.archive = ZipFile.OpenRead(zipFilePath);
             this.dataReader = dataReader;
             this.extensionsToRead = extensionsToRead;
         }
 
-        public ICollection<TableData> Parse()
+        public void Parse()
         {
-            return this.Parse(false);
+            this.Parse(false);
         }
 
-        public ICollection<TableData> Parse(bool extractDateFromFolderName)
+        public void Parse(bool extractDateFromFolderName)
         {
-            var tablesData = new List<TableData>();
-
             foreach (ZipArchiveEntry entry in archive.Entries)
             {
                 if (IsExtensionToRead(entry.FullName) == true)
@@ -47,13 +44,11 @@
                         entryDate = DateTime.Now;
                     }
 
-                    tablesData.Add(dataReader.ReadData());
+                    dataReader.ReadData(entryStream, entry.Length, entryDate);
 
                     entryStream.Dispose();
                 }
             }
-
-            return tablesData;
         }
 
         private bool IsExtensionToRead(string fileName)

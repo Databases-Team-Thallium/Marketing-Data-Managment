@@ -9,12 +9,10 @@
     public class Product
     {
         private ICollection<Sale> sales;
-        private ICollection<Store> stores;
 
         public Product()
         {
             this.Sales = new HashSet<Sale>();
-            this.Stores = new HashSet<Store>(); 
         }
 
         /// <summary>
@@ -48,12 +46,6 @@
         {
             get { return this.sales; }
             set { this.sales = value; }
-        }
-        
-        public virtual ICollection<Store> Stores
-        {
-            get { return this.stores; }
-            set { this.stores = value; }
         }
     }
 }

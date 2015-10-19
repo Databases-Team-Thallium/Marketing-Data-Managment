@@ -1,34 +1,29 @@
 ﻿namespace MarketingDataManagment.ConsoleClient
 {
-    using System.Data.Entity;
-
+    
     using Databases.MSSQL.Data;
-    using Databases.MSSQL.Data.Migrations;
-    using Databases.MSSQL.Models;
-    using XmlHandler;
+    using Databases.MongoDB.Data;
+    using System.Linq;
+    using System.Linq.Expressions;
 
     public class Startup
     {
+        //TODO: Add ability to Dispose databases data ?
+        //TODO: Where you check if record exists, instead of .All() implement Find()
+        //TODO: In IDataWriters and IDataReaders check for file extension, if its invalid replace it with valid
+
         public static void Main()
         {
-            Database.SetInitializer(
-                new MigrateDatabaseToLatestVersion<MarketingDataManagmentDbContenxt, Configuration>());
+            var mongoDb = new ProductsCatalogData();
+            var mssqlDb = new StoresData();
 
-            var db = new MarketingDataManagmentDbContenxt();
+            var all = mongoDb.Products.All();
 
-            db.Stores.Add(new Store
+            foreach(var item in all)
             {
-                StoreName = "Physical Store",
-                StoreLocation = "Sofia"
-
-            });
-            db.SaveChanges();
-
-            //puts revenues in Revenues table in the database
-            //since no such store exists in the database, a default value of 0 is set
-
-            //var xmlParser = new XmlHandler(new XmlRevenueStrategy(), "../../../revenues.xml");
-            //xmlParser.Handle();
+                System.Console.WriteLine(item.Id);
+                mongoDb.Products.Delete(item);
+            }
         }
     }
 }

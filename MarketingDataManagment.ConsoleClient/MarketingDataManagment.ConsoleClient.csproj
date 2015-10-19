@@ -64,10 +64,6 @@
       <Project>{59ded67b-68ac-468b-bf1c-b7be19e0ab84}</Project>
       <Name>MarketingDataManagment.Databases</Name>
     </ProjectReference>
-    <ProjectReference Include="..\MarketingDataManagment.XmlParser\MarketingDataManagment.XmlHandler.csproj">
-      <Project>{48397869-58cd-4975-8206-759ffd0a04c1}</Project>
-      <Name>MarketingDataManagment.XmlHandler</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
