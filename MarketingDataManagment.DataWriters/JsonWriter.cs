@@ -1,10 +1,11 @@
 ﻿namespace MarketingDataManagment.DataWriters
 {
-    using Databases.MSSQL.Reports;
     using System.Collections.Generic;
     using System.Diagnostics;
     using System.IO;
     using System.Web.Script.Serialization;
+    using Databases.MSSQL.Models;
+    using Databases.MSSQL.Models.Reports;
 
     public class JsonWriters
     {
@@ -17,12 +18,12 @@
                 Directory.CreateDirectory(JsonReportFilePath);
             }
 
-            foreach (var productSales in saleStores)
+            foreach (var productsSales in saleStores)
             {
-                FileStream fs1 = new FileStream(JsonReportFilePath + @"\" + productSales.Sale.SaleId + ".json", FileMode.OpenOrCreate, FileAccess.Write);
+                FileStream fs1 = new FileStream(JsonReportFilePath + @"\" + productsSales.Product.ProductId + ".json", FileMode.OpenOrCreate, FileAccess.Write);
                 StreamWriter writer = new StreamWriter(fs1);
 
-                writer.WriteLine(CreateJsonReport(productSales));
+                writer.WriteLine(CreateJsonReport(productsSales));
                 writer.Close();
             }
 
@@ -34,9 +35,9 @@
             return new JavaScriptSerializer().Serialize(
                     new Dictionary<string, string>()
                         {
-                            { "sale-id", salesReport.SaleId.ToString() },
-                            { "sale-name", salesReport.Sale.SaleName},
-                            { "store-name", salesReport.Store.StoreName },
+                            { "product-id", salesReport.ProductId.ToString() },
+                            { "product-code", salesReport.Product.Product.ProductCode},
+                            { "store-name", salesReport.Product.Store.StoreName },
                             { "total-quantity-sold", salesReport.TotalQuantitySold.ToString() },
                             { "total-incomes", salesReport.TotalIncomes.ToString() }
                         });

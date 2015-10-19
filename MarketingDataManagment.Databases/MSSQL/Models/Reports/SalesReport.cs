@@ -1,12 +1,12 @@
-﻿namespace MarketingDataManagment.Databases.MSSQL.Reports
+﻿namespace MarketingDataManagment.Databases.MSSQL.Models.Reports
 {
     using Models;
    
         public class SalesReport
         {
-            public int SaleId { get; set; }
+            public int ProductId { get; set; }
 
-            public Sale Sale { get; set; }
+            public Sale Product { get; set; }
 
             public Store Store { get; set; }
 
